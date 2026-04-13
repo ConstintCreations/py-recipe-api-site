@@ -2,8 +2,48 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
     background-color: bisque;
+}
+
+header {
+    width: 100svw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 2.5%;
+    background-color: burlywood;
+    color: bisque;
+    border-bottom: 5px dashed saddlebrown; 
+}
+
+.header-links {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.header-links a {
+    text-decoration: none;
+    background-color: bisque;
+    color: saddlebrown;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 3px dotted saddlebrown;
+    cursor: pointer;
+}
+
+.header-links a:hover {
+    border: 3px dashed saddlebrown;
+    text-decoration: underline;
+}
+
+.header-recipy-link {
+    text-decoration: none;
+    color: bisque;
+    cursor: pointer;
 }
