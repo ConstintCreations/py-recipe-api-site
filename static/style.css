@@ -5,6 +5,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+*:focus {
+    outline: none;
+}
+
 body {
     background-color: bisque;
 }
@@ -33,12 +37,12 @@ header {
     color: saddlebrown;
     padding: 5px 10px;
     border-radius: 10px;
-    border: 3px dotted saddlebrown;
+    border: 3px dashed saddlebrown;
     cursor: pointer;
 }
 
-.header-links a:hover {
-    border: 3px dashed saddlebrown;
+.header-links a:hover, .header-links a:focus {
+    border: 3px solid saddlebrown;
     text-decoration: underline;
 }
 
@@ -46,4 +50,95 @@ header {
     text-decoration: none;
     color: bisque;
     cursor: pointer;
+}
+
+.header-recipy-h1 {
+    text-shadow: 2px 2px saddlebrown;
+}
+
+.header-recipy-link:hover, .header-recipy-link:focus {
+    text-decoration: underline;
+}
+
+.recipes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 50px;
+    gap: 50px;
+    justify-content: center;
+}
+
+.recipe {
+    width: 400px;
+    overflow: hidden;
+    border: 4px dashed saddlebrown;
+    border-radius: 30px;
+    background-color: blanchedalmond;
+    cursor: pointer;
+    box-shadow: 3px 3px 20px -8px saddlebrown;
+    height: 400px;
+}
+
+.recipe-image {
+    background-image: url(/static/resources/noImage.png);
+    width: 400px;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 4px dashed saddlebrown;
+}
+
+.recipe-info {
+    width: 100%;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 160px;
+}
+
+.recipe-title {
+    color: saddlebrown;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.recipe-ingredients {
+    font-weight: normal;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.recipe-username {
+    width: 100%;
+    display: block;
+    color: saddlebrown;
+    padding: 6px 12px;
+    text-align: center;
+    font-weight: bold;
+    background-color: blanchedalmond;
+    text-decoration: none;
+}
+
+.recipe:hover, .recipe:has(.recipe-username:focus), .recipe:has(.recipe-title:focus) {
+    border: 4px solid saddlebrown;
+}
+
+.recipe:hover .recipe-image, .recipe:has(.recipe-username:focus) .recipe-image, .recipe:has(.recipe-title:focus) .recipe-image {
+    border-bottom: 4px solid saddlebrown;
+}
+
+.recipe:hover:not(:has(.recipe-username:hover)) .recipe-title {
+    text-decoration: underline;
+}
+
+.recipe:has(.recipe-username:hover) .recipe-title {
+    text-decoration: none;
+}
+
+.recipe-username:hover, .recipe-username:focus, .recipe-title:focus {
+    text-decoration: underline;
 }

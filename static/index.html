@@ -9,12 +9,14 @@
     <link rel="stylesheet" href="/static/style.css">
     <link rel="icon" type="icon" href="/static/favicon.ico">
     <title>ReciPy</title>
+
+    <script defer type="text/python" src="/static/app.py"></script>
 </head>
 <body onload="brython()">
     <div id="app"></div>
     <header>
         <a class="header-recipy-link" href="/">
-            <h1>
+            <h1 class="header-recipy-h1">
                 ReciPy
             </h1>
         </a>
@@ -27,6 +29,22 @@
             </a>
         </div>
     </header>
-    <script type="text/python" src="/static/app.py"></script>
+
+    <div class="recipes">
+
+        <div class="recipe">
+            <div class="recipe-image"></div>
+            <div class="recipe-info">
+                <a href="./" class="recipe-title">Spaghetti and Meatballs</a>
+                <h3 class="recipe-ingredients">
+                    Ingredients: Spaghetti, Meatballs
+                </h3>
+                <p class="recipe-description">A classic Italian dish.</p>
+            </div>
+            <a href="./" class="recipe-username">User</a>
+        </div>
+
+    </div>
+
 </body>
 </html>
