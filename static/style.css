@@ -77,6 +77,24 @@ header {
     overflow: auto;
 }
 
+.user-title {
+    height: 36px;
+    margin: 50px;
+    color: saddlebrown;
+}
+
+.user-recipes {
+    height: calc(100vh - 196px);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0px 50px 50px 50px;
+    padding-bottom: 50px;
+    gap: 50px;
+    justify-content: center;
+    overflow: auto;
+}
+
 .recipe {
     width: 400px;
     overflow: hidden;

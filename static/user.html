@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" type="icon" href="/static/favicon.ico">
+    <title>ReciPy</title>
+
+    <script defer type="text/python" src="/static/app.py"></script>
+</head>
+<body onload="brython()">
+    <div id="app"></div>
+    <header>
+        <a class="header-recipy-link" href="/">
+            <h1 class="header-recipy-h1">
+                ReciPy
+            </h1>
+        </a>
+        <div class="header-links">
+            <a href="/static/login.html">
+                Login
+            </a>
+            <a href="/static/register.html">
+                Register
+            </a>
+        </div>
+    </header>
+
+    <h1 class="user-title">User's Recipes:</h1>
+
+    <div class="user-recipes">
+
+        <div class="recipe">
+            <div class="recipe-image"></div>
+            <div class="recipe-info">
+                <a href="/static/recipe.html" class="recipe-title">Spaghetti and Meatballs</a>
+                <h3 class="recipe-ingredients">
+                    Ingredients: Spaghetti, Meatballs
+                </h3>
+                <p class="recipe-description">A classic Italian dish.</p>
+            </div>
+            <a href="/static/user.html" class="recipe-username">User</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
