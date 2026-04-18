@@ -1,4 +1,4 @@
-from browser import document, aio
+from browser import document, aio, window
 from browser.timer import set_timeout, clear_timeout
 from browser.local_storage import storage
 import json
@@ -50,6 +50,7 @@ async def register_user():
 
     if request.status == 200:
         storage["api_key"] = data['api_key']
+        window.try_log_in()
         show_register_info(text = f"Success! You are now logged in with your new API Key: {data['api_key']}", hide_timer = False)
     else:
         if request.status == 400:

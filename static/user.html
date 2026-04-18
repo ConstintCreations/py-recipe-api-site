@@ -10,6 +10,7 @@
     <link rel="icon" type="icon" href="/static/favicon.ico">
     <title>ReciPy</title>
 
+    <script defer type="text/python" src="/static/header_buttons.py"></script>
     <script defer type="text/python" src="/static/app.py"></script>
 </head>
 <body onload="brython()">
@@ -27,6 +28,14 @@
             <a href="/static/register.html">
                 Register
             </a>
+        </div>
+        <div class="header-logged-in-links">
+            <a class="my-recipes-link" href="/static/user.html">
+                User
+            </a>
+            <button class="log-out-button">
+                Log Out
+            </button>
         </div>
     </header>
 

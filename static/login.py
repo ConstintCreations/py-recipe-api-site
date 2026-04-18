@@ -1,4 +1,4 @@
-from browser import document, aio
+from browser import document, aio, window
 from browser.timer import set_timeout, clear_timeout
 from browser.local_storage import storage
 import json
@@ -42,6 +42,7 @@ async def login_user(api_key:str):
 
     if request.status == 200:
         storage["api_key"] = api_key
+        window.try_log_in()
         show_login_info(text = "Success! You are now logged in.")
     else:
         if request.status == 401:
