@@ -254,16 +254,12 @@ header {
     cursor: text;
 }
 
-.register-info {
+.register-info, .login-info {
     color: saddlebrown;
     font-weight: bold;
     text-wrap: wrap;
     max-width: 400px;
     display: none;
-}
-
-.register-info.show {
-    display: block;
 }
 
 .register-name-button:hover, .register-name-button:focus, .login-key-button:hover, .login-key-button:focus {

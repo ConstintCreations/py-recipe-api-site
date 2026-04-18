@@ -47,7 +47,6 @@ async def register_user():
     )
 
     data = json.loads(request.data)
-    print(request.status, data)
 
     if request.status == 200:
         storage["api_key"] = data['api_key']
@@ -59,7 +58,7 @@ async def register_user():
             show_register_info(text = f"Oh No! An unknown error occured. ({request.status})")
 
 
-def register_button_click_handler(ev):
-    aio.run(register_button_click(ev)) 
+def register_button_click_handler(event):
+    aio.run(register_button_click(event)) 
 
 register_button.bind("click", register_button_click_handler)
