@@ -63,5 +63,41 @@
             </div>
     </div>
 
+    <div class="recipe-editor-form-background">
+        <div class="recipe-editor-form">
+            <div class="recipe-editor-title-button">
+                <h1>Edit Recipe</h1>
+                <button class="recipe-editor-exit-button">x</button>
+            </div>
+            <hr>
+            <form class="recipe-editor">
+                <i>
+                    *Note that only the filled fields will update the recipe. Leave a field blank to keep the current value.
+                </i>
+                <div class="form-input-grouping">
+                    <label class="form-recipe-title-lable" for="form-recipe-title">Recipe Name: </label>
+                    <input autocorrect="off" autocomplete="off" spellcheck="false" class="form-recipe-title" id="form-recipe-title" name="form-recipe-title" type="text">
+                </div>
+                <div class="form-textarea-grouping">
+                    <label class="form-recipe-description-label" for="form-recipe-description">Recipe Description: </label>
+                    <textarea class="form-recipe-description" id="form-recipe-description" name="form-recipe-description" resize="vertical"></textarea>
+                </div>
+                <div class="form-textarea-grouping">
+                    <label class="form-recipe-ingredients-label" for="form-recipe-ingredients">Recipe Ingredients (Comma-Seperated List): </label>
+                    <textarea class="form-recipe-ingredients" id="form-recipe-ingredients" name="form-recipe-ingredients" resize="vertical"></textarea>
+                </div>
+                <div class="form-textarea-grouping">
+                    <label class="form-recipe-instructions-label" for="form-recipe-instructions">Recipe Instructions: </label>
+                    <textarea class="form-recipe-instructions" id="form-recipe-instructions" name="form-recipe-instructions" resize="vertical"></textarea>
+                </div>
+                <div class="form-button-grouping">
+                    <button class="form-recipe-submit" type="submit">Edit Recipe</button>
+                    <button type="reset">Reset</button>
+                    <button class="form-recipe-cancel" type="button">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
 </body>
 </html>
