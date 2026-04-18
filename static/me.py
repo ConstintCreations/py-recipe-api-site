@@ -1,9 +1,13 @@
-from browser import document, aio, html
+from browser import document, aio, html, window
 from browser.local_storage import storage
 import json
 
 user_title = document.select_one(".me-user-title")
 user_recipes = document.select_one(".me-user-recipes")
+
+user_info = document.select_one(".me-user-info")
+api_key_text = document.select_one(".me-api-key-text")
+recipe_count_text = document.select_one(".me-recipe-count-text")
 
 async def try_get_data():
     api_key = storage.get("api_key")
@@ -17,6 +21,9 @@ async def try_get_data():
     
     user_title.style.textAlign = "left"
     user_title.text = f"{username}'s Recipes:"
+
+    api_key_text.text = api_key
+    user_info.style.display = "flex"
     
     user_recipes.style.display = "flex"
 
@@ -34,6 +41,7 @@ async def load_my_recipes():
 
     if request.status == 200:
         data = json.loads(request.data)
+        recipe_count_text.text = data["total"]
         for recipe in data["recipes"]:
             recipe_element = create_recipe_element(recipe)
             user_recipes <= recipe_element
@@ -63,3 +71,8 @@ def create_recipe_element(recipe):
     recipe_div <= username_link
 
     return recipe_div    
+
+def copy_api_key(event):
+    window.navigator.clipboard.writeText(api_key_text.text)
+
+api_key_text.bind("click", copy_api_key)
