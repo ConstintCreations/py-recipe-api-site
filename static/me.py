@@ -1,4 +1,4 @@
-from browser import document, aio, html, window
+from browser import document, aio, window
 from browser.local_storage import storage
 import json
 
@@ -43,37 +43,13 @@ async def load_my_recipes():
         data = json.loads(request.data)
         recipe_count_text.text = data["total"]
         for recipe in data["recipes"]:
-            recipe_element = create_recipe_element(recipe)
+            recipe_element = window.create_recipe_element(recipe)
             user_recipes <= recipe_element
 
 def try_get_data_handler():
     aio.run(try_get_data())
 
 try_get_data_handler()
-
-def create_recipe_element(recipe):
-    recipe_div = html.DIV(Class="recipe")
-    image_div = html.DIV(Class="recipe-image")
-    info_div = html.DIV(Class="recipe-info")
-
-    if "image_url" in recipe:
-        image_div.style.backgroundImage = f"url({recipe['image_url']})"
-
-    title_link = html.A(f"[{'Public' if recipe['public'] else 'Private'}] {recipe['title']}", href=f"/static/recipe.html", Class="recipe-title")
-    ingredients_text = html.H3(f"Ingredients: {recipe['ingredients']}", Class="recipe-ingredients")
-    description_text = html.P(recipe['description'], Class="recipe-description")
-
-    username_link = html.A(recipe['user']['username'], href="/static/user.html", Class="recipe-username")
-
-    info_div <= title_link
-    info_div <= ingredients_text
-    info_div <= description_text
-
-    recipe_div <= image_div
-    recipe_div <= info_div
-    recipe_div <= username_link
-
-    return recipe_div    
 
 def copy_api_key(event):
     window.navigator.clipboard.writeText(api_key_text.text)
