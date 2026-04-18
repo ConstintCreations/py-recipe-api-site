@@ -96,13 +96,17 @@ header {
     overflow: auto;
 }
 
-.user-title {
+.user-title, .me-user-title {
     height: 36px;
     margin: 50px;
     color: saddlebrown;
 }
 
-.user-recipes {
+.me-user-title {
+    text-align: center;
+}
+
+.user-recipes, .me-user-recipes {
     height: calc(100vh - 196px);
     display: flex;
     flex-direction: row;
@@ -114,7 +118,11 @@ header {
     overflow: auto;
 }
 
-.recipe {
+.me-user-recipes {
+    display: none;
+}
+
+.recipe, .create-recipe {
     width: 400px;
     overflow: hidden;
     border: 4px dashed saddlebrown;
@@ -123,6 +131,17 @@ header {
     cursor: pointer;
     box-shadow: 3px 3px 20px -8px saddlebrown;
     height: 400px;
+}
+
+.create-recipe {
+    display: grid;
+    place-items: center;
+    font-size: 300px;
+    color: saddlebrown;
+}
+
+.create-recipe:hover, .create-recipe:focus {
+    border: 4px solid saddlebrown;
 }
 
 .recipe-image {
