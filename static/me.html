@@ -43,17 +43,57 @@
     <h1 class="me-user-title">Log in to Access</h1>
 
     <div class="me-user-info">
-        <div class="me-api-key-wrapper">API Key: <button class="me-api-key-text">apikeyapikeyapikey</button></div>
+        <div class="me-api-key-wrapper">API Key: <button class="me-api-key-text"></button></div>
         <div class="me-recipe-count-wrapper">Recipes: <p class="me-recipe-count-text">0</p></div>
     </div>
 
     <div class="me-user-recipes">
 
-        <button class="create-recipe">
+        <button class="show-create-recipe">
             +
         </button>
 
     </div>
 
+    <div class="recipe-creator-form-background">
+        <div class="recipe-creator-form">
+            <div class="recipe-creator-title-button">
+                <h1>New Recipe</h1>
+                <button class="recipe-creator-exit-button">x</button>
+            </div>
+            <hr>
+            <form class="recipe-creator">
+                <div class="form-input-grouping">
+                    <label class="form-recipe-title-lable" for="form-recipe-title">Recipe Name: </label>
+                    <input required class="form-recipe-title" id="form-recipe-title" name="form-recipe-title" type="text">
+                </div>
+                <div class="form-input-grouping">
+                    <label class="form-recipe-img-url-lable" for="form-recipe-img-url">Image URL (Optional): </label>
+                    <input class="form-recipe-img-url" id="form-recipe-img-url" name="form-recipe-img-url" type="url">
+                </div>
+                <div class="form-input-grouping">
+                    <label class="form-recipe-is-private-label" for="form-recipe-is-private">Private Recipe: </label>
+                    <input class="form-recipe-is-private" id="form-recipe-is-private" name="form-recipe-is-private" type="checkbox">
+                </div>
+                <div class="form-textarea-grouping">
+                    <label class="form-recipe-description-label" for="form-recipe-description">Recipe Description (Optional): </label>
+                    <textarea class="form-recipe-description" id="form-recipe-description" name="form-recipe-description" resize="vertical"></textarea>
+                </div>
+                <div class="form-textarea-grouping">
+                    <label class="form-recipe-ingredients-label" for="form-recipe-ingredients">Recipe Ingredients: </label>
+                    <textarea required class="form-recipe-ingredients" id="form-recipe-ingredients" name="form-recipe-ingredients" resize="vertical"></textarea>
+                </div>
+                <div class="form-textarea-grouping">
+                    <label class="form-recipe-instructions-label" for="form-recipe-instructions">Recipe Instructions (Markdown Supported): </label>
+                    <textarea required class="form-recipe-instructions" id="form-recipe-instructions" name="form-recipe-instructions" resize="vertical"></textarea>
+                </div>
+                <div class="form-button-grouping">
+                    <button class="form-recipe-submit" type="submit">Create Recipe</button>
+                    <button type="reset">Reset</button>
+                    <button class="form-recipe-cancel" type="button">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

@@ -13,7 +13,11 @@ def create_recipe_element(recipe, show_public_private:bool = True):
     else:
         title_link = html.A({recipe['title']}, href=f"/static/recipe.html", Class="recipe-title")
     ingredients_text = html.H3(f"Ingredients: {recipe['ingredients']}", Class="recipe-ingredients")
-    description_text = html.P(recipe['description'], Class="recipe-description")
+
+    if recipe["description"]:
+        description_text = html.P(recipe['description'], Class="recipe-description")
+    else:
+        description_text = html.P("", Class="recipe-description")
 
     username_link = html.A(recipe['user']['username'], href="/static/user.html", Class="recipe-username")
 

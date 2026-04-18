@@ -165,7 +165,7 @@ header {
     filter: none;
 }
 
-.recipe, .create-recipe {
+.recipe, .show-create-recipe {
     width: 400px;
     overflow: hidden;
     border: 4px dashed saddlebrown;
@@ -176,14 +176,14 @@ header {
     height: 400px;
 }
 
-.create-recipe {
+.show-create-recipe {
     display: grid;
     place-items: center;
     font-size: 300px;
     color: saddlebrown;
 }
 
-.create-recipe:hover, .create-recipe:focus {
+.show-create-recipe:hover, .show-create-recipe:focus {
     border: 4px solid saddlebrown;
 }
 
@@ -442,4 +442,158 @@ hr {
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+.recipe-creator-form-background {
+    position: absolute;
+    display: none;
+    place-items: center;
+    padding: 60px 60px 120px 60px;
+    top: 60.8px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background-color: #00000088;
+}
+
+.recipe-creator-form {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    height: 100%;
+    background-color: bisque;
+    border: 4px solid saddlebrown;
+    border-radius: 50px;
+    padding: 30px 50px;
+    color: saddlebrown;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.recipe-creator-title-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recipe-creator-exit-button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 36px;
+    color: saddlebrown;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.recipe-creator-exit-button:focus {
+    text-decoration: underline;
+}
+
+.recipe-creator {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0px 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.form-input-grouping {
+    display: flex; 
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-input-grouping input[type="text"], .form-input-grouping input[type="url"] {
+    flex: 1;
+    background-color: blanchedalmond;
+    color: saddlebrown;
+    border: 3px dashed saddlebrown;
+    border-radius: 8px;
+    padding: 4px 8px;
+}
+
+.form-input-grouping input[type="text"]:hover, .form-input-grouping input[type="url"]:hover, .form-input-grouping input[type="text"]:focus, .form-input-grouping input[type="url"]:focus {
+    border: 3px solid saddlebrown;
+} 
+
+.form-recipe-title {
+    font-weight: bold;
+}
+
+.form-input-grouping input[type="checkbox"] {
+    cursor: pointer;
+    border: 3px solid saddlebrown;
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0px;
+    background-color: burlywood;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    display: grid;
+    place-items: center;
+}
+
+.form-input-grouping input[type="checkbox"]::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 1px;
+    transform: scale(0);
+    transition: transform ease-in-out 0.15s;
+    box-shadow: inset 1em 1em saddlebrown;
+}
+
+.form-input-grouping input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+.form-textarea-grouping {
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+}
+
+.form-textarea-grouping textarea {
+    border: 3px dashed saddlebrown;
+    background-color: blanchedalmond;
+    color: saddlebrown;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+.form-textarea-grouping textarea:hover, .form-textarea-grouping textarea:focus {
+    border: 3px solid saddlebrown;
+}
+
+.form-button-grouping {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.form-button-grouping button {
+    border: 3px dashed saddlebrown;
+    padding: 4px 8px;
+    border-radius: 8px;
+    color: saddlebrown;
+    font-weight: bold;
+    background-color: blanchedalmond;
+    cursor: pointer;
+}
+
+.form-button-grouping button:hover, .form-button-grouping button:focus {
+    border: 3px solid saddlebrown;
 }
