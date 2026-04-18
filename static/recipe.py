@@ -16,6 +16,10 @@ description = document.select_one(".recipe-description-full")
 ingredients_list = document.select_one(".recipe-ingredients-list")
 instructions = document.select_one(".recipe-instructions-full")
 
+buttons_container = document.select_one(".recipe-full-buttons")
+edit_button = document.select_one(".recipe-full-edit")
+delete_button = document.select_one(".recipe-full-delete")
+
 async def load_recipe():
     global recipe_id_raw
     if not(recipe_id_raw):
@@ -41,7 +45,8 @@ async def load_recipe():
         data = json.loads(request.data)
         error_text.style.display = "none"
 
-        print(data)
+        if int(user_id) == int(data['user']['user_id']):
+            buttons_container.style.display = "flex"
 
         if "image_url" in data:
             image.style.backgroundImage = f"url({data['image_url']})"
@@ -81,3 +86,29 @@ def load_recipe_handler():
     aio.run(load_recipe())
 
 load_recipe_handler()
+
+async def try_delete_recipe():
+    global recipe_id_raw
+    if not(recipe_id_raw):
+        error_text.text = "No ID Specified"
+        return
+    
+    try:
+        recipe_id = int(recipe_id_raw)
+    except(Exception):
+        error_text.text = "Invalid ID"
+        return
+    
+    api_key = storage["api_key"]
+    if not api_key:
+        return
+    
+    request = await aio.ajax("DELETE", f"/recipes/{recipe_id}", headers = {"x-api-key": api_key})
+
+    if request.status == 200:
+        window.location.href = "/static/me.html"
+
+def delete_recipe_handler(event):
+    aio.run(try_delete_recipe())
+
+delete_button.bind("click", delete_recipe_handler)

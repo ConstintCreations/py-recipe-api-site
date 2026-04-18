@@ -12,7 +12,6 @@
 
     <script defer type="text/python" src="/static/header_buttons.py"></script>
     <script defer type="text/python" src="/static/recipe.py"></script>
-    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
 </head>
 <body onload="brython()">
     <div id="app"></div>
@@ -46,6 +45,10 @@
             <div class="recipe-image-full"></div>
             <div class="recipe-info-full">
                 <h1 class="recipe-title-full"></h1>
+                <div class="recipe-full-buttons">
+                    <button class="recipe-full-edit">Edit</button>
+                    <button class="recipe-full-delete">Delete</button>
+                </div>
                 <div class="recipe-username-full-wraper">By: <a class="recipe-username-full" href="/static/user.html"></a> <span class="recipe-is-public-full"></span></div>
                 <div class="recipe-description-full">
                 </div>

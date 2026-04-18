@@ -602,3 +602,31 @@ textarea {
 .form-button-grouping button:hover, .form-button-grouping button:focus {
     border: 3px solid saddlebrown;
 }
+
+.recipe-full-buttons {
+    display: none;
+    flex-direction: row;
+    gap: 8px;
+    margin: 4px 0px;
+}
+
+.recipe-full-buttons button {
+    border: 3px dashed saddlebrown;
+    padding: 4px 8px;
+    border-radius: 8px;
+    color: saddlebrown;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.recipe-full-edit {
+    background-color: blanchedalmond;
+}
+
+.recipe-full-delete {
+    background-color: lightsalmon;
+}
+
+.recipe-full-buttons button:hover, .recipe-full-buttons button:focus {
+    border: 3px solid saddlebrown;
+}
