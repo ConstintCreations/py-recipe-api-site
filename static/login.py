@@ -36,13 +36,21 @@ async def login_button_click(event):
 
 async def login_user(api_key:str):
     request = await aio.get(
-        "/recipes/me",
+        "/user/name",
         headers={"x-api-key": api_key}
     )
 
     if request.status == 200:
+        data = json.loads(request.data)
+        username = data['username']
+        if not username:
+            username = "User"
+
         storage["api_key"] = api_key
+        storage["username"] = username
+
         window.try_log_in()
+        
         show_login_info(text = "Success! You are now logged in.")
     else:
         if request.status == 401:

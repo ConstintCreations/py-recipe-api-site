@@ -490,3 +490,16 @@ async def delete_user(key_info = Depends(verify_api_key)):
     conn.commit()
 
     return {"message": f"User Deleted"}
+
+@app.get("/user/name")
+async def get_name(key_info = Depends(verify_api_key)):
+    user_id = key_info[0]
+
+    cursor.execute("SELECT username FROM users WHERE id = ?", (user_id,))
+
+    result = cursor.fetchone()
+
+    if not result:
+        raise HTTPException(status_code=404, detail="User not found")
+    
+    return {"username": result[0]}
