@@ -491,7 +491,7 @@ async def delete_user(key_info = Depends(verify_api_key)):
 
     return {"message": f"User Deleted"}
 
-@app.get("/user/name")
+@app.get("/me")
 async def get_name(key_info = Depends(verify_api_key)):
     user_id = key_info[0]
 
@@ -502,4 +502,4 @@ async def get_name(key_info = Depends(verify_api_key)):
     if not result:
         raise HTTPException(status_code=404, detail="User not found")
     
-    return {"username": result[0]}
+    return {"username": result[0], "user_id": user_id}

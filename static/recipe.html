@@ -11,7 +11,7 @@
     <title>ReciPy</title>
 
     <script defer type="text/python" src="/static/header_buttons.py"></script>
-    <script defer type="text/python" src="/static/app.py"></script>
+    <script defer type="text/python" src="/static/recipe.py"></script>
     <script type="module" src="https://md-block.verou.me/md-block.js"></script>
 </head>
 <body onload="brython()">
@@ -41,32 +41,22 @@
     </header>
 
     <div class="recipe-full-container">
+        <h1 class="recipe-full-error">Log in to Access</h1>
         <div class="recipe-full">
             <div class="recipe-image-full"></div>
             <div class="recipe-info-full">
-                <h1 class="recipe-title-full">Spaghetti and Meatballs</h1>
-                <div class="recipe-username-full-wraper">By: <a class="recipe-username-full" href="/static/user.html">User</a> <span class="recipe-is-public-full">(Public)</span></div>
+                <h1 class="recipe-title-full"></h1>
+                <div class="recipe-username-full-wraper">By: <a class="recipe-username-full" href="/static/user.html"></a> <span class="recipe-is-public-full"></span></div>
                 <div class="recipe-description-full">
-                    A classic Italian dish.
                 </div>
                 <div class="recipe-ingredients-full">
                     Ingredients: 
                     <ul class="recipe-ingredients-list">
-                        <li class="recipe-ingredients-list-item">Spaghetti</li>
-                        <li class="recipe-ingredients-list-item">Meatballs</li>
                     </ul>
                 </div>
-                <md-block class="recipe-instructions-full">
-                    # Instructions
-                    <hr>
-                    <br>
-
-                        1. Get Spaghetti 
-                        2. Cook Spaghetti
-                        3. Make Meatballs
-                        4. Put Together
-                        5. BOOM! Spaghetti and Meatballs
-                </md-block>
+                <div class="recipe-instructions-full">
+                    
+                </div>
             </div>
     </div>
 

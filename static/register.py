@@ -51,6 +51,18 @@ async def register_user():
     if request.status == 200:
         storage["api_key"] = data['api_key']
         storage["username"] = username
+        request = await aio.get(
+            "/me",
+            headers={"x-api-key": data['api_key']}
+        )
+
+        if request.status == 200:
+            meData = json.loads(request.data)
+            user_id = str(meData['user_id'])
+            storage['user_id'] = user_id
+        else:
+            show_register_info(text = f"Oh No! An unknown error occured. ({request.status})")
+            return
         window.try_log_in()
         show_register_info(text = f"Success! You are now logged in with your new API Key: {data['api_key']}", hide_timer = False)
     else:

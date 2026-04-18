@@ -1,6 +1,5 @@
 from browser import document, window
 from browser.local_storage import storage
-import json
 
 header_links = document.select_one(".header-links")
 header_logged_in_links = document.select_one(".header-logged-in-links")

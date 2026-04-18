@@ -36,18 +36,21 @@ async def login_button_click(event):
 
 async def login_user(api_key:str):
     request = await aio.get(
-        "/user/name",
+        "/me",
         headers={"x-api-key": api_key}
     )
 
     if request.status == 200:
         data = json.loads(request.data)
         username = data['username']
+        user_id = str(data['user_id'])
         if not username:
             username = "User"
+        
 
         storage["api_key"] = api_key
         storage["username"] = username
+        storage["user_id"] = user_id
 
         window.try_log_in()
         

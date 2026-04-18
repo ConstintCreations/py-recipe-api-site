@@ -368,10 +368,14 @@ header {
     border-radius: 30px;
     background-color: blanchedalmond;
     box-shadow: 3px 3px 20px -8px saddlebrown;
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 8px;
     justify-content: flex-start;
+}
+
+.recipe-full-error {
+    color: saddlebrown;
 }
 
 .recipe-info-full {
@@ -391,6 +395,7 @@ header {
     background-size: cover;
     height: 300px;
     border-bottom: 4px solid saddlebrown;
+    display: none;
 }
 
 .recipe-title-full {
