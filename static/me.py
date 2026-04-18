@@ -56,6 +56,9 @@ def create_recipe_element(recipe):
     image_div = html.DIV(Class="recipe-image")
     info_div = html.DIV(Class="recipe-info")
 
+    if "image_url" in recipe:
+        image_div.style.backgroundImage = f"url({recipe['image_url']})"
+
     title_link = html.A(f"[{'Public' if recipe['public'] else 'Private'}] {recipe['title']}", href=f"/static/recipe.html", Class="recipe-title")
     ingredients_text = html.H3(f"Ingredients: {recipe['ingredients']}", Class="recipe-ingredients")
     description_text = html.P(recipe['description'], Class="recipe-description")
