@@ -29,7 +29,7 @@ async def try_get_data():
         return
     
     user_title.style.textAlign = "left"
-    user_title.text = f"{username}'s Recipes:"
+    user_title.text = "Your Recipes:"
 
     api_key_text.text = api_key
     user_info.style.display = "flex"

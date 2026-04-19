@@ -492,7 +492,7 @@ async def delete_user(key_info = Depends(verify_api_key)):
     return {"message": f"User Deleted"}
 
 @app.get("/me")
-async def get_name(key_info = Depends(verify_api_key)):
+async def get_me(key_info = Depends(verify_api_key)):
     user_id = key_info[0]
 
     cursor.execute("SELECT username FROM users WHERE id = ?", (user_id,))
@@ -503,3 +503,14 @@ async def get_name(key_info = Depends(verify_api_key)):
         raise HTTPException(status_code=404, detail="User not found")
     
     return {"username": result[0], "user_id": user_id}
+
+@app.get("/user/{user_id}")
+async def get_user(user_id: int, request: Request):
+    cursor.execute("SELECT username FROM users WHERE id = ?", (user_id,))
+
+    result = cursor.fetchone()
+
+    if not result:
+        raise HTTPException(status_code=404, detail="User not found")
+    
+    return {"username": result[0]}
