@@ -13,7 +13,8 @@ from io import BytesIO
 
 app = FastAPI()
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+static_dir = os.path.join(os.path.dirname(__file__), "static")
+app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
 @app.get("/")
 async def root():
@@ -514,3 +515,10 @@ async def get_user(user_id: int, request: Request):
         raise HTTPException(status_code=404, detail="User not found")
     
     return {"username": result[0]}
+
+def main():
+    import uvicorn
+    uvicorn.run("RP5_Recipy_Frontend.main:app", host="127.0.0.1", port=8000)
+
+if __name__ == "__main__":
+    main()
