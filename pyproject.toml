@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "RP5-Recipy-Frontend"
-version = "0.0.1"
+version = "0.0.5"
 description = "Recipy is a website for creating and managing recipes"
 authors = [
     {name="ConstintCreations"}

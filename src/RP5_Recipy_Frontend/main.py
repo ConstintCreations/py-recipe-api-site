@@ -16,9 +16,11 @@ app = FastAPI()
 static_dir = os.path.join(os.path.dirname(__file__), "static")
 app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
+images_dir = os.path.join(os.path.dirname(__file__), "images")
+
 @app.get("/")
 async def root():
-    return FileResponse("static/index.html")
+    return FileResponse(os.path.join(static_dir, "index.html"))
 
 conn = sqlite3.connect("recipes.db")
 cursor = conn.cursor()
@@ -112,7 +114,7 @@ def process_image(recipe_id: int, image_url: str):
         
         image.thumbnail((1000, 1000))
 
-        os.makedirs("images", exist_ok=True)
+        os.makedirs(images_dir, exist_ok=True)
         image = image.convert("RGB")
         image_file_path = f"images/image_{recipe_id}.webp"
         image.save(image_file_path, "WEBP", quality=75)
@@ -126,7 +128,7 @@ def process_image(recipe_id: int, image_url: str):
         print("Image Processing Failed: ", e)
         return
     
-app.mount("/images", StaticFiles(directory="images"), name="images")
+app.mount("/images", StaticFiles(directory=images_dir), name="images")
 
 @app.exception_handler(RateLimitExceeded)
 async def rate_limit_handler(request: Request, exc: RateLimitExceeded):
