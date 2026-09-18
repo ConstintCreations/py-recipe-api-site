@@ -6,7 +6,7 @@ ReciPy is a website for creating and managing recipes built using [Py-Recipe-API
 
 ## Usage
 
-The package is on [TestPyPi](https://test.pypi.org/project/RP5-Recipy-Frontend/)
+The package is on [TestPyPi](https://test.pypi.org/project/RP5-Recipy-Frontend/) and was made for Python 3.8+
 
 To install, you can use:
 ```
