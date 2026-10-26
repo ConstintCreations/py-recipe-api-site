@@ -13,7 +13,7 @@ To install, you can use:
 pip install -i https://test.pypi.org/simple/ RP5-Recipy-Frontend==0.0.5
 ```
 
-(If that doesn't work, try `pip install --index-url https://test.pypi.org/simple --extra-index-url https://test.pypi.org/simple RP5-Recipy-Frontend==0.0.5`)
+(If that doesn't work, try `pip install --index-url https://test.pypi.org/simple --extra-index-url https://pypi.org/simple RP5-Recipy-Frontend==0.0.5`)
 
 Add your python scripts folder to your path, if it isn't already, and run with:
 ```
